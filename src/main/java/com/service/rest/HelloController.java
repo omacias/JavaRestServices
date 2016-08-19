@@ -16,7 +16,6 @@ public class HelloController {
 
 	@RequestMapping(value="/getJson/{name}", method= RequestMethod.GET)
 	public ResponseEntity<?> getJson(@PathVariable(value="name")String name, HttpServletRequest req, HttpServletResponse res){
-		res.setContentType("application/hal+json;charset=UTF-8");
 		return new ResponseEntity<>("{\"message\": \"Hello World\", \"name\": \""+name+"\"}", HttpStatus.OK);
 	}
 }
