@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/Home")
 public class HelloController {
 
-	@RequestMapping(value="/getJson", method= RequestMethod.GET)
-	public ResponseEntity<?> getJson(HttpServletRequest req, HttpServletResponse res){
+	@RequestMapping(value="/getJson/{name}", method= RequestMethod.GET)
+	public ResponseEntity<?> getJson(@PathVariable(value="name")String name, HttpServletRequest req, HttpServletResponse res){
 		res.setContentType("application/hal+json;charset=UTF-8");
-		return new ResponseEntity<>("{\"message\": \"Hello World\"}", HttpStatus.OK);
+		return new ResponseEntity<>("{\"message\": \"Hello World\", \"name\": \""+name+"\"}", HttpStatus.OK);
 	}
 }
