@@ -16,6 +16,6 @@ public class HelloServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		resp.setContentType("application/hal+json;charset=UTF-8");
-		resp.getWriter().append("Hello World");
+		resp.getWriter().append("{\"msg\": \"Hello World\"}");
 	}
 }
