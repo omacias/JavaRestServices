@@ -10,6 +10,7 @@
   <properties>
   	<spring-version>4.1.6.RELEASE</spring-version>
   	<servlet-version>2.5</servlet-version>
+  	<jackson.version>2.6.3</jackson.version>
   </properties>
   <dependencies>
     <dependency>
@@ -43,6 +44,11 @@
 		<artifactId>spring-test</artifactId>
 		<version>${spring-version}</version>
 	</dependency>
+ 	<dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>JavaRestServices</finalName>
